@@ -5,7 +5,7 @@ import pablo.tzeliks.model.enums.TipoEquipamento;
 
 public abstract class Equipamento {
 
-    private final int id;
+    private int id;
     private Codigo codigo;
     private String nome;
     private int quantidade;
@@ -19,6 +19,10 @@ public abstract class Equipamento {
         this.quantidade = quantidade;
         this.preco = preco;
         this.tipoEquipamento = tipoEquipamento;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

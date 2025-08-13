@@ -1,25 +1,28 @@
 package pablo.tzeliks.service;
 
 import pablo.tzeliks.model.Equipamento;
-import pablo.tzeliks.model.MotorEletrico;
 import pablo.tzeliks.model.PainelControle;
-import pablo.tzeliks.model.domain.Codigo;
-import pablo.tzeliks.view.EquipamentoDTO;
+import pablo.tzeliks.dto.EquipamentoDTO;
+import pablo.tzeliks.model.enums.TipoEquipamento;
 
 public class EquipamentoFactory {
 
-    public static Equipamento InstanceOf(EquipamentoDTO equipamentoDTO) {
+    public static Equipamento instanceOf(TipoEquipamento tipoEquipamento) {
 
         try {
 
-            switch(equipamentoDTO.tipoEquipamento()) {
+            switch (tipoEquipamento) {
 
-                case MOTOR_ELETRICO : {
-                    return new MotorEletrico(equipamentoDTO.id(), equipamentoDTO.nome(), equipamentoDTO.codigo(), equipamentoDTO.quantidade(), equipamentoDTO.preco(), equipamentoDTO.tipoEquipamento(), equipamentoDTO.potencia());
+                case MOTOR_ELETRICO -> {
+
                 }
 
-                case PAINEL_CONTROLE : {
-                    return new PainelControle(equipamentoDTO.id(), equipamentoDTO.nome(), equipamentoDTO.codigo(), equipamentoDTO.quantidade(), equipamentoDTO.preco(), equipamentoDTO.tipoEquipamento(), equipamentoDTO.tensao());
+                case PAINEL_CONTROLE -> {
+
+                }
+
+                default -> {
+
                 }
 
             }

@@ -7,7 +7,6 @@ import pablo.tzeliks.model.domain.Codigo;
 import pablo.tzeliks.model.enums.TipoEquipamento;
 import pablo.tzeliks.service.contracts.CrudEstoqueInterface;
 import pablo.tzeliks.service.contracts.MovimentacaoEstoqueInterface;
-import pablo.tzeliks.view.EquipamentoDTO;
 
 import java.util.ArrayList;
 import java.util.List;
