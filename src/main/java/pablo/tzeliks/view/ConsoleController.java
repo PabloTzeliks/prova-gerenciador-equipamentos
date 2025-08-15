@@ -1,8 +1,12 @@
 package pablo.tzeliks.view;
 
 import pablo.tzeliks.service.EstoqueService;
+import pablo.tzeliks.view.helpers.InputHelper;
+import pablo.tzeliks.view.helpers.MenuHelper;
+import pablo.tzeliks.view.helpers.MessageHelper;
 import pablo.tzeliks.view.menus.CadastroView;
 import pablo.tzeliks.view.menus.ListarView;
+import pablo.tzeliks.view.menus.PesquisaView;
 
 import java.util.Scanner;
 
@@ -28,9 +32,9 @@ public class ConsoleController {
                 case 2:
                     ListarView.executar(scanner, service);
                     break;
-//                case 3:
-//                    ListagemView.listarPorTipo(scanner, service);
-//                    break;
+                case 3:
+                    PesquisaView.executar(scanner, service);
+                    break;
 //                case 4:
 //                    PesquisaView.pesquisarPorCodigo(scanner, service);
 //                    break;

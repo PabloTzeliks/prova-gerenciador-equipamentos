@@ -1,4 +1,4 @@
-package pablo.tzeliks.view;
+package pablo.tzeliks.view.helpers;
 
 import pablo.tzeliks.model.enums.TipoEquipamento;
 

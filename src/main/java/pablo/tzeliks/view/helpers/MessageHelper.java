@@ -1,4 +1,4 @@
-package pablo.tzeliks.view;
+package pablo.tzeliks.view.helpers;
 
 public class MessageHelper {
     public static void sucesso(String msg) { System.out.println("\n[OK] " + msg); }

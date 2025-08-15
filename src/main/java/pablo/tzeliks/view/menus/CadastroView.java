@@ -3,9 +3,9 @@ package pablo.tzeliks.view.menus;
 import pablo.tzeliks.model.domain.Codigo;
 import pablo.tzeliks.model.enums.TipoEquipamento;
 import pablo.tzeliks.service.EstoqueService;
-import pablo.tzeliks.view.InputHelper;
-import pablo.tzeliks.view.MenuHelper;
-import pablo.tzeliks.view.MessageHelper;
+import pablo.tzeliks.view.helpers.InputHelper;
+import pablo.tzeliks.view.helpers.MenuHelper;
+import pablo.tzeliks.view.helpers.MessageHelper;
 import pablo.tzeliks.dto.EquipamentoDTO;
 
 import java.util.Scanner;
