@@ -1,4 +1,4 @@
-package pablo.tzeliks.view;
+package pablo.tzeliks.dto;
 
 import pablo.tzeliks.model.domain.Codigo;
 import pablo.tzeliks.model.enums.TipoEquipamento;

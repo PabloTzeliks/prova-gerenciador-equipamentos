@@ -3,7 +3,7 @@ package pablo.tzeliks.mapper;
 import org.mapstruct.Mapper;
 import pablo.tzeliks.model.MotorEletrico;
 import pablo.tzeliks.model.PainelControle;
-import pablo.tzeliks.view.EquipamentoDTO;
+import pablo.tzeliks.dto.EquipamentoDTO;
 
 @Mapper
 public interface EquipamentoMapper {

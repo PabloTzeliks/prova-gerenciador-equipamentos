@@ -3,7 +3,7 @@ package pablo.tzeliks.service;
 import org.mapstruct.factory.Mappers;
 import pablo.tzeliks.mapper.EquipamentoMapper;
 import pablo.tzeliks.model.Equipamento;
-import pablo.tzeliks.view.EquipamentoDTO;
+import pablo.tzeliks.dto.EquipamentoDTO;
 
 public class EquipamentoFactory {
 

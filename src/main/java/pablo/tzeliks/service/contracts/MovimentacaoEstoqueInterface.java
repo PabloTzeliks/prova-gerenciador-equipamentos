@@ -5,7 +5,7 @@ import pablo.tzeliks.model.domain.Codigo;
 
 public interface MovimentacaoEstoqueInterface {
 
-    void AdicionarUnidadesEstoque(Codigo codigo, int quantidade) throws MovimentacaoEstoqueException;
-    void RetirarUnidadesEstoque(Codigo codigo, int quantidade) throws MovimentacaoEstoqueException;
+    void adicionarUnidadesEstoque(Codigo codigo, int quantidade) throws MovimentacaoEstoqueException;
+    void retirarUnidadesEstoque(Codigo codigo, int quantidade) throws MovimentacaoEstoqueException;
 
 }
