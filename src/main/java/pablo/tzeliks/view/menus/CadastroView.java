@@ -1,4 +1,92 @@
 package pablo.tzeliks.view.menus;
 
+import pablo.tzeliks.model.domain.Codigo;
+import pablo.tzeliks.model.enums.TipoEquipamento;
+import pablo.tzeliks.service.EstoqueService;
+import pablo.tzeliks.view.InputHelper;
+import pablo.tzeliks.view.MenuHelper;
+import pablo.tzeliks.view.MessageHelper;
+import pablo.tzeliks.dto.EquipamentoDTO;
+
+import java.util.Scanner;
+
 public class CadastroView {
+
+    public static void executar(Scanner scanner, EstoqueService service) {
+        MenuHelper.imprimirMenuCadastro();
+
+        String nome = InputHelper.lerString(scanner, "Nome do equipamento: ");
+
+        Codigo codigo = null;
+        while (codigo == null) {
+            String codigoRaw = InputHelper.lerString(scanner, "Código do equipamento (informado pelo usuário): ");
+            try {
+                codigo = new Codigo(codigoRaw);
+            } catch (Exception e) {
+                MessageHelper.erro("Código inválido: " + e.getMessage() + ". Tente novamente.");
+            }
+        }
+
+        int quantidade;
+        while (true) {
+            quantidade = InputHelper.lerInteiro(scanner, "Quantidade: ");
+            if (quantidade < 0) {
+                MessageHelper.erro("Quantidade não pode ser negativa.");
+            } else {
+                break;
+            }
+        }
+
+        double preco;
+        while (true) {
+            preco = InputHelper.lerDouble(scanner, "Preço: ");
+            if (preco <= 0) {
+                MessageHelper.erro("Preço deve ser maior que zero.");
+            } else {
+                break;
+            }
+        }
+
+        TipoEquipamento tipo = InputHelper.escolherEnum(scanner, "Escolha o tipo do equipamento:");
+        if (tipo == null) {
+            MessageHelper.info("O tipo do equipamento deve ser informado.");
+            return;
+        }
+
+        // Campos específicos por Subclasse
+        Double potencia = null;
+        Integer tensao = null;
+
+        if (tipo == TipoEquipamento.MOTOR_ELETRICO) {
+            potencia = InputHelper.lerDouble(scanner, "Potência (kW): ");
+        } else if (tipo == TipoEquipamento.PAINEL_CONTROLE) {
+            tensao = InputHelper.lerInteiro(scanner, "Tensão (V): ");
+        }
+
+        // Enviar Dados como DTO
+        EquipamentoDTO dto;
+        try {
+            dto = new EquipamentoDTO(
+                    0, // Para o sistema definir o ID
+                    nome,
+                    codigo,
+                    quantidade,
+                    preco,
+                    tipo,
+                    potencia,
+                    tensao
+            );
+        } catch (Exception e) {
+            MessageHelper.erro("Erro ao construir EquipamentoDTO. Verifique a assinatura do construtor/record. Detalhe: " + e.getMessage());
+            return;
+        }
+
+        // Chamar o Service
+        try {
+            service.cadastrarEquipamento(dto);
+            MessageHelper.sucesso("Equipamento cadastrado com sucesso!");
+        } catch (Exception e) {
+            MessageHelper.erro("Falha ao cadastrar equipamento: " + e.getMessage());
+        }
+    }
 }
