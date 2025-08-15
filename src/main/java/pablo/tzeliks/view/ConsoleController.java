@@ -2,6 +2,7 @@ package pablo.tzeliks.view;
 
 import pablo.tzeliks.service.EstoqueService;
 import pablo.tzeliks.view.menus.CadastroView;
+import pablo.tzeliks.view.menus.ListarView;
 
 import java.util.Scanner;
 
@@ -25,29 +26,29 @@ public class ConsoleController {
                     CadastroView.executar(scanner, service);
                     break;
                 case 2:
-                    ListagemView.listarTodos(service);
+                    ListarView.executar(scanner, service);
                     break;
-                case 3:
-                    ListagemView.listarPorTipo(scanner, service);
-                    break;
-                case 4:
-                    PesquisaView.pesquisarPorCodigo(scanner, service);
-                    break;
-                case 5:
-                    RemocaoView.removerPorCodigo(scanner, service);
-                    break;
-                case 6:
-                    MovimentacaoEstoqueView.executar(scanner, service);
-                    break;
-                case 7:
-                    RelatoriosView.executar(scanner, service);
-                    break;
-                case 8:
-                    BuscaAvancadaView.porNome(scanner, service);
-                    break;
-                case 9:
-                    BuscaAvancadaView.porPreco(scanner, service);
-                    break;
+//                case 3:
+//                    ListagemView.listarPorTipo(scanner, service);
+//                    break;
+//                case 4:
+//                    PesquisaView.pesquisarPorCodigo(scanner, service);
+//                    break;
+//                case 5:
+//                    RemocaoView.removerPorCodigo(scanner, service);
+//                    break;
+//                case 6:
+//                    MovimentacaoEstoqueView.executar(scanner, service);
+//                    break;
+//                case 7:
+//                    RelatoriosView.executar(scanner, service);
+//                    break;
+//                case 8:
+//                    BuscaAvancadaView.porNome(scanner, service);
+//                    break;
+//                case 9:
+//                    BuscaAvancadaView.porPreco(scanner, service);
+//                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;

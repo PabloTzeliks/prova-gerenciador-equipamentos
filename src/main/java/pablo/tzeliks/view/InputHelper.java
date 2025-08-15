@@ -43,7 +43,7 @@ public class InputHelper {
 
             System.out.println("Tipos de Equipamento:\n" +
                     "\n1- Motor Elétrico" +
-                    "\n2- Painela Controle\n");
+                    "\n2- Painel Controle\n");
 
             String input = scanner.nextLine();
 

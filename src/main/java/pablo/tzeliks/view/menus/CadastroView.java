@@ -19,7 +19,7 @@ public class CadastroView {
 
         Codigo codigo = null;
         while (codigo == null) {
-            String codigoRaw = InputHelper.lerString(scanner, "Código do equipamento (informado pelo usuário): ");
+            String codigoRaw = InputHelper.lerString(scanner, "Código do equipamento ( ex: AAA-0001 ): ");
             try {
                 codigo = new Codigo(codigoRaw);
             } catch (Exception e) {
@@ -66,6 +66,21 @@ public class CadastroView {
         // Enviar Dados como DTO
         EquipamentoDTO dto;
         try {
+
+            if (tipo == TipoEquipamento.MOTOR_ELETRICO && potencia == null) {
+                MessageHelper.erro("Potência é obrigatória para motor. Cadastro cancelado.");
+                return;
+            }
+
+            if (tipo == TipoEquipamento.PAINEL_CONTROLE && tensao == null) {
+                MessageHelper.erro("Tensão é obrigatória para painel. Cadastro cancelado.");
+                return;
+            }
+
+            // QUICKFIX: converter wrappers para primitivos antes de chamar o construtor que espera primitivos
+            double potenciaVal = (potencia != null) ? potencia.doubleValue() : 0.0;
+            double tensaoVal = (tensao != null) ? tensao.doubleValue() : 0.0;
+
             dto = new EquipamentoDTO(
                     0, // Para o sistema definir o ID
                     nome,
@@ -73,8 +88,8 @@ public class CadastroView {
                     quantidade,
                     preco,
                     tipo,
-                    potencia,
-                    tensao
+                    potenciaVal,
+                    tensaoVal
             );
         } catch (Exception e) {
             MessageHelper.erro("Erro ao construir EquipamentoDTO. Verifique a assinatura do construtor/record. Detalhe: " + e.getMessage());

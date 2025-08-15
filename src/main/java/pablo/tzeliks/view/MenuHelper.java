@@ -21,8 +21,18 @@ public class MenuHelper {
 
     public static void imprimirMenuCadastro() {
         System.out.println("===============================");
-        System.out.println("  Sistema de Controle WEG 2.0  ");
+        System.out.println("    CADASTRO DE EQUIPAMENTO    ");
         System.out.println("===============================");
+        System.out.println();
+    }
 
+    public static void imprimirMenuListagem() {
+        System.out.println("===============================");
+        System.out.println("    LISTAGEM DE EQUIPAMENTO    ");
+        System.out.println("===============================");
+        System.out.println("1 - Listar todos os equipamentos");
+        System.out.println("2 - Listar equipamentos por tipo");
+        System.out.println("0 - Voltar");
+        System.out.println();
     }
 }
