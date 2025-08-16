@@ -1,5 +1,6 @@
 package pablo.tzeliks.view.helpers;
 
+import pablo.tzeliks.dto.EquipamentoDTO;
 import pablo.tzeliks.model.enums.TipoEquipamento;
 
 import java.util.Scanner;
@@ -64,4 +65,28 @@ public class InputHelper {
             }
         }
     }
+
+    public static boolean confirmarExclusao(Scanner scanner, EquipamentoDTO dto) {
+
+        MenuHelper.imprimirConfirmacaoRemocao();
+
+        EquipamentoPrinter.imprimirEquipamento(dto);
+
+        System.out.println("\n1- Confirmar Exclusão" +
+                "\n0- Cancelar");
+
+        String input = scanner.nextLine();
+
+        try {
+            if (input.equals("1")) {
+                return true;
+            } else if (input.equals("0")) {
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            MessageHelper.erro("Valor inválido, tente novamente.");
+        }
+        return false;
+    }
+
 }

@@ -7,6 +7,7 @@ import pablo.tzeliks.view.helpers.MessageHelper;
 import pablo.tzeliks.view.menus.CadastroView;
 import pablo.tzeliks.view.menus.ListarView;
 import pablo.tzeliks.view.menus.PesquisaView;
+import pablo.tzeliks.view.menus.RemocaoView;
 
 import java.util.Scanner;
 
@@ -35,9 +36,9 @@ public class ConsoleController {
                 case 3:
                     PesquisaView.executar(scanner, service);
                     break;
-//                case 4:
-//                    PesquisaView.pesquisarPorCodigo(scanner, service);
-//                    break;
+                case 4:
+                    RemocaoView.executar(scanner, service);
+                    break;
 //                case 5:
 //                    RemocaoView.removerPorCodigo(scanner, service);
 //                    break;

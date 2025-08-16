@@ -41,4 +41,17 @@ public class MenuHelper {
         System.out.println("===============================");
         System.out.println();
     }
+
+    public static void imprimirMenuRemocao() {
+        System.out.println("===============================");
+        System.out.println("     REMOÇÃO DE EQUIPAMENTO    ");
+        System.out.println("===============================");
+        System.out.println();
+    }
+
+    public static void imprimirConfirmacaoRemocao() {
+        System.out.println("------ CONFIRMAR REMOÇÃO ------");
+        System.out.println();
+    }
+
 }
