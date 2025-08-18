@@ -72,7 +72,7 @@ public class InputHelper {
 
         EquipamentoPrinter.imprimirEquipamento(dto);
 
-        System.out.println("\n1- Confirmar Exclusão" +
+        System.out.println("\n1- Confirmar Remoção" +
                 "\n0- Cancelar");
 
         String input = scanner.nextLine();
@@ -87,6 +87,29 @@ public class InputHelper {
             MessageHelper.erro("Valor inválido, tente novamente.");
         }
         return false;
+    }
+
+    public static int escolhaMovimentacaoEstoque(Scanner scanner) {
+
+        System.out.println("Escolha uma opção:");
+        System.out.println("1- Adicionar Unidades");
+        System.out.println("2- Retirar Unidades");
+        System.out.println("0- Voltar");
+
+        String input = scanner.nextLine();
+
+        try {
+            if (input.equals("1")) {
+                return 1;
+            } else if (input.equals("2")) {
+                return 2;
+            } else if (input.equals("0")) {
+                return 0; // Voltar
+            }
+        } catch (NumberFormatException e) {
+            MessageHelper.erro("Valor inválido, tente novamente.");
+        }
+        return 0;
     }
 
 }

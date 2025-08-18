@@ -54,4 +54,11 @@ public class MenuHelper {
         System.out.println();
     }
 
+    public static void imprimirMenuMovimentarEstoque() {
+        System.out.println("===============================");
+        System.out.println("    MOVIMENTAÇÃO DE ESTOQUE    ");
+        System.out.println("===============================");
+        System.out.println();
+    }
+
 }

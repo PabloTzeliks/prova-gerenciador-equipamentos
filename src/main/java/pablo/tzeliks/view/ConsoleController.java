@@ -4,10 +4,7 @@ import pablo.tzeliks.service.EstoqueService;
 import pablo.tzeliks.view.helpers.InputHelper;
 import pablo.tzeliks.view.helpers.MenuHelper;
 import pablo.tzeliks.view.helpers.MessageHelper;
-import pablo.tzeliks.view.menus.CadastroView;
-import pablo.tzeliks.view.menus.ListarView;
-import pablo.tzeliks.view.menus.PesquisaView;
-import pablo.tzeliks.view.menus.RemocaoView;
+import pablo.tzeliks.view.menus.*;
 
 import java.util.Scanner;
 
@@ -39,9 +36,9 @@ public class ConsoleController {
                 case 4:
                     RemocaoView.executar(scanner, service);
                     break;
-//                case 5:
-//                    RemocaoView.removerPorCodigo(scanner, service);
-//                    break;
+                case 5:
+                    MovimentacaoEstoqueView.executar(scanner, service);
+                    break;
 //                case 6:
 //                    MovimentacaoEstoqueView.executar(scanner, service);
 //                    break;
