@@ -3,17 +3,16 @@ package pablo.tzeliks.view.helpers;
 public class MenuHelper {
 
     public static void imprimirMenuPrincipal() {
-        System.out.println("===============================");
-        System.out.println("  Sistema de Controle WEG 2.0  ");
-        System.out.println("===============================");
+        System.out.println("====================================");
+        System.out.println("  Sistema Controle de Equipamentos  ");
+        System.out.println("====================================");
         System.out.println("1 - Cadastrar Equipamento");
         System.out.println("2 - Listar Equipamentos");
         System.out.println("3 - Pesquisar Equipamento por Código");
         System.out.println("4 - Remover Equipamento por Código");
         System.out.println("5 - Movimentar Estoque (Adicionar/Retirar Quantidade)");
         System.out.println("6 - Relatórios de Estoque");
-        System.out.println("7 - Busca Avançada por Nome");
-        System.out.println("8 - Busca Avançada por Preço");
+        System.out.println("7 - Buscas Avançadas");
         System.out.println("0 - Sair");
         System.out.println();
     }
@@ -58,6 +57,37 @@ public class MenuHelper {
         System.out.println("===============================");
         System.out.println("    MOVIMENTAÇÃO DE ESTOQUE    ");
         System.out.println("===============================");
+        System.out.println();
+    }
+
+    public static void imprimirMenuRelatorios() {
+        System.out.println("===============================");
+        System.out.println("     RELATÓRIOS DE ESTOQUE     ");
+        System.out.println("===============================");
+        System.out.println("1 - Quantidade total de equipamentos em estoque");
+        System.out.println("2 - Equipamento com maior preço");
+        System.out.println("3 - Equipamento com maior quantidade");
+        System.out.println("4 - Equipamentos com estoque baixo (quantidade < 5)");
+        System.out.println("0 - Voltar");
+        System.out.println();
+    }
+
+    public static void imprimirMenuBuscaAvancada() {
+        System.out.println("===============================");
+        System.out.println("         BUSCA AVANÇADA        ");
+        System.out.println("===============================");
+        System.out.println("1 - Busca por Nome (parte do nome)");
+        System.out.println("2 - Busca por Preço (maior que)");
+        System.out.println("0 - Voltar");
+    }
+
+    public static void imprimirBuscaNome() {
+        System.out.println("---- BUSCA AVANÇADA: NOME ----");
+        System.out.println();
+    }
+
+    public static void imprimirBuscaPreco() {
+        System.out.println("---- BUSCA AVANÇADA: PREÇO ----");
         System.out.println();
     }
 

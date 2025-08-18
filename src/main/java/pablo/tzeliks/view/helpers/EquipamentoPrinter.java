@@ -46,6 +46,28 @@ public final class EquipamentoPrinter {
         }
     }
 
+    private static void imprimirListaResumo(List<EquipamentoDTO> lista) {
+        System.out.printf("%-4s %-30s %-12s %-10s %-10s %-15s%n", "ID", "NOME", "CÓDIGO", "QTD", "PREÇO", "TIPO");
+        System.out.println("----------------------------------------------------------------------------------------");
+        for (EquipamentoDTO dto : lista) {
+            String codigoStr = dto.codigo() != null ? dto.codigo().toString() : "-";
+            System.out.printf("%-4d %-30s %-12s %-10d %-10.2f %-15s%n",
+                    dto.id(),
+                    abreviar(dto.nome(), 30),
+                    codigoStr,
+                    dto.quantidade(),
+                    dto.preco(),
+                    dto.tipoEquipamento() != null ? dto.tipoEquipamento().name() : "-"
+            );
+        }
+    }
+
+    private static String abreviar(String s, int tamanho) {
+        if (s == null) return "-";
+        if (s.length() <= tamanho) return s;
+        return s.substring(0, tamanho - 3) + "...";
+    }
+
     private static String safeString(Object o) {
         return o == null ? "-" : o.toString();
     }

@@ -39,18 +39,12 @@ public class ConsoleController {
                 case 5:
                     MovimentacaoEstoqueView.executar(scanner, service);
                     break;
-//                case 6:
-//                    MovimentacaoEstoqueView.executar(scanner, service);
-//                    break;
-//                case 7:
-//                    RelatoriosView.executar(scanner, service);
-//                    break;
-//                case 8:
-//                    BuscaAvancadaView.porNome(scanner, service);
-//                    break;
-//                case 9:
-//                    BuscaAvancadaView.porPreco(scanner, service);
-//                    break;
+                case 6:
+                    RelatoriosView.executar(scanner, service);
+                    break;
+                case 7:
+                    BuscaAvancadaView.executar(scanner, service);
+                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;
